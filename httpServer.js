@@ -1,7 +1,7 @@
-
+const express = require("express");
+const app = express();
 const http = require('http');
 
-const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
     console.log(req.url)
@@ -10,6 +10,5 @@ const server = http.createServer((req, res) => {
     res.end('<h1>This is Shyam</h1> <p>Hey, How are you!</p>');
 }) 
 
-server.listen(port, ()=>{
-    console.log(`Server is listening on port ${port}`);
-});
+
+app.listen(process.env.PORT || 3000);
